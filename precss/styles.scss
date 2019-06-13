@@ -1,0 +1,325 @@
+@import "default.scss";
+@import "smart-grid.scss";
+
+
+/* Default btn */
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 30px;
+  color: #fff;
+  font-size: 16px;
+  background: $active-color;
+  border-radius: 22px;
+
+  &:hover,
+  &:focus {
+    background: darken($active-color, 5%);
+  }
+
+  &:active {
+    background: darken($active-color, 10%);
+  }
+}
+
+/* Section Caption */
+.section-title {
+  @include md-block(){
+    font-size: 32px;
+  }
+  @include sm-block(){
+    font-size: 20px;
+  }
+
+  font-size: 28px;
+  color: $active-color;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.section-text {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+
+/* HEADER */
+.header {
+  padding: 15px 0;
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.2);
+
+  .wrapper {
+    @include sm-block() {
+      flex-direction: column;
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.header-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    @include sm-block() {
+      margin: 0 10px;
+    }
+
+    margin: 0 20px;
+
+    a {
+      text-decoration: none;
+      font-weight: 300;
+      font-size: 18px;
+      color: $default-nav;
+      text-transform: uppercase;
+
+      &:hover,
+      &:focus {
+        color: $active-color;
+      }
+
+      &:active {
+        color: darken($active-color, 10%);
+      }
+
+    }
+  }
+}
+
+/* MAIN */
+
+/* SECTION Hello */
+
+.hello {
+  position: relative;
+  padding: 100px 0;
+
+
+  .wrapper {
+    @include row-flex();
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .left-content {
+    &__title {
+
+      @include sm-block(){
+        font-size: 42px;
+        br {
+          display: none;
+        }
+      }
+
+      font-size: 72px;
+      line-height: 1.2;
+      font-weight: 300;
+
+      strong {
+        @include sm-block(){
+          font-size: 32px;
+        }
+        font-size: 72px;
+        color: $active-color;
+      }
+    }
+
+    &__text {
+      display: block;
+      font-size: 25px;
+      margin-top: 10px;
+      font-weight: 300;
+      strong {
+        font-size: 25px;
+        font-weight: 500;
+      }
+    }
+
+    &__btn {
+      @include sm-block(){
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      margin-top: 40px;
+    }
+  }
+
+  &__img {
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+
+  }
+
+  .fa-chevron-down {
+    @include sm-block(){
+      display: none;
+    }
+
+    color: $active-color;
+    font-size: 24px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -12px;
+
+    &:hover,
+    &:focus {
+      color: darken($active-color, 30%);
+    }
+
+    &:active {
+      color: darken($active-color, 50%);
+    }
+  }
+}
+
+/* SECTION  About */
+.about {
+  @include sm-block(){
+    margin-top: 0;
+  }
+
+  margin-top: 90px;
+  text-align: center;
+
+  &__text {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  &__stack-title {
+    margin-top: 30px;
+  }
+
+  &__technologies {
+    font-weight: 700;
+    width: 40%;
+    margin: 0 auto;
+    text-transform: uppercase;
+  }
+
+  .resume {
+    margin-top: 30px;
+
+    .fa-file {
+      margin-right: 10px;
+    }
+  }
+}
+
+/*SECTION Portfolio*/
+.portfolio {
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 100px;
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+  .project {
+    @include row-flex();
+    justify-content: space-between;
+
+    &__item {
+      @include size(4);
+      @include size-md(6);
+      @include size-sm(12);
+
+      border: 4px solid $active-color;
+      box-sizing: border-box;
+      padding: 20px;
+      margin-bottom: 20px;
+
+      &:hover,
+      &:focus {
+        a {
+          color: $active-color;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: $default-nav;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+
+      }
+
+      span {
+        display: block;
+        font-size: 22px;
+        margin-top: 20px;
+      }
+
+      img {
+        display: block;
+      }
+    }
+  }
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+
+  .contact-mail {
+    @include sm-block() {
+      font-size: 18px;
+    }
+
+    color: $active-color;
+    text-decoration: none;
+    font-size: 22px;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin: 30px 0;
+  }
+}
+
+/* TODO: Social */
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+
+  &__item {
+    margin: 0 15px;
+    
+    img {
+      border: 2px solid $active-color;
+      padding: 5px;
+      border-radius: 25%;
+
+      &:hover,
+      &:focus {
+        transform: scale(1.2);
+      }
+
+      &:active {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
